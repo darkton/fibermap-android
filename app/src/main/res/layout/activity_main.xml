@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".MainActivity">
+
+    <WebView
+        android:id="@+id/webview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <LinearLayout
+        android:id="@+id/progressbar"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:background="#40000000"
+        android:clickable="true" >
+
+        <com.google.android.material.progressindicator.CircularProgressIndicator
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:indeterminate="true"
+            app:indicatorColor="@color/white" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/noconnection"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:background="@color/md_theme_light_background"
+        android:clickable="true"
+        android:padding="16dp"
+        android:orientation="vertical" >
+
+        <TextView
+            android:textAppearance="?attr/textAppearanceTitleMedium"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Sem conexão"
+            android:textAlignment="center"/>
+
+        <TextView
+            android:layout_marginTop="4dp"
+            android:textAppearance="?attr/textAppearanceBodyMedium"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Não consegui carregar a página, verifique sua conexão com a internet. Caso persista, entre em contato com o administrador."
+            android:textAlignment="center"/>
+
+        <Button
+            style="@style/Widget.Material3.Button.Icon"
+            android:id="@+id/refresh"
+            android:layout_marginTop="16dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Tentar novamente"
+            app:icon="@drawable/baseline_refresh_24"
+            app:iconGravity="textStart"
+            android:onClick="refreshWeb"
+
+            />
+    </LinearLayout>
+
+</RelativeLayout>
